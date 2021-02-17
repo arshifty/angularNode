@@ -9,6 +9,12 @@ import { ViewComponent } from './hero/view/view.component';
 import { AddUserComponent } from './hero/add-user/add-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { EmployeeGenderPipe } from './home/employeeTitle.pipe';
+import { StyleDirective } from './home/style.directive';
+import { AdminModule  } from './admin/admin.module';
+import { LazyComponentComponent } from './lazy-component/lazy-component.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import{ ResolveGuard } from './guards/resolve.guard'
 
 
 @NgModule({
@@ -17,6 +23,10 @@ import { HomeComponent } from './home/home.component';
     ViewComponent,
     AddUserComponent,
     HomeComponent,
+    EmployeeGenderPipe,
+    StyleDirective,
+    LazyComponentComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +35,17 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     CommonModule,
     ModalModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
   ],
-  providers: [],
+  providers: [ResolveGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor()
+  {
+    console.log("AppModule  loaded" );
+  }
+
+
+}

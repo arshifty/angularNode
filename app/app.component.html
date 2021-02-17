@@ -1,7 +1,26 @@
-<a routerLink="/home">Homepage </a>
+<a routerLink="/homepage">Homepage</a>
+<br />
+<a routerLink="/home">pipe/ directive/module lazy loading examples </a>
 <br />
 <a routerLink="/add">Add User</a>
 <br />
 <a routerLink="/display">Display </a>
 <br />
+<a routerLink="/customers">customers as lazy loading </a>
+<br />
+
+<a routerLink="/login">inside admin >> login </a>
+<br />
+<a routerLink="/list">inside admin >> list </a>
+<br />
+<a routerLink="/admin/login">using module lazy loading login </a>
+<br />
+<a routerLink="/admin/list">using module lazy loading list </a>
+<br/>
+
+
 <router-outlet></router-outlet>
+<hr>
+<h3>Lazy loading components using button </h3>
+<button (click)="loadAdmin()" >load admin list</button>
+<br>

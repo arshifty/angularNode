@@ -68,6 +68,7 @@ export class ViewComponent implements OnInit {
         });
   }
 
+/*
   viewData() {
       this.myservice.getAll().subscribe(
         data => {
@@ -78,6 +79,11 @@ export class ViewComponent implements OnInit {
           console.log(error);
         });
   }
+*/
+
+viewData() {
+  this.userValue = this.route.snapshot.data['data'];
+}
 
   deleteUser(id: any ) {
     this.myservice.delete(id)

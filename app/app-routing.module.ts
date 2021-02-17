@@ -3,10 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddUserComponent } from './hero/add-user/add-user.component';
 import { ViewComponent } from './hero/view/view.component';
 import { HomeComponent } from './home/home.component';
+import { HomepageComponent } from './homepage/homepage.component'
+import{ ResolveGuard } from './guards/resolve.guard';
 
 const routes: Routes = [
   { 
-    path: '', redirectTo: 'home', pathMatch: 'full' 
+    path: '', redirectTo: 'homepage', pathMatch: 'full' 
+  },
+  { 
+    path: 'homepage', 
+    component: HomepageComponent
   },
   { 
     path: 'home', 
@@ -18,8 +24,21 @@ const routes: Routes = [
   },
   { 
     path: 'display', 
-    component: ViewComponent 
+    component: ViewComponent ,
+    resolve: {
+    data: ResolveGuard,
+    },
+
+  },
+  { 
+    path: 'customers', 
+    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) 
+  },
+  { 
+    path: 'admin', 
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) 
   }
+
 ];
 
 @NgModule({
