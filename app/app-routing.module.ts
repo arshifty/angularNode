@@ -5,6 +5,7 @@ import { ViewComponent } from './hero/view/view.component';
 import { HomeComponent } from './home/home.component';
 import { HomepageComponent } from './homepage/homepage.component'
 import{ ResolveGuard } from './guards/resolve.guard';
+import { ViewDataComponent } from './observable/view-data/view-data.component';
 
 const routes: Routes = [
   { 
@@ -37,7 +38,11 @@ const routes: Routes = [
   { 
     path: 'admin', 
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) 
-  }
+  },
+  { 
+    path: 'observable', 
+    component: ViewDataComponent 
+  },
 
 ];
 

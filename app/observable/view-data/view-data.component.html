@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Observable Data</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Contact</th>
+        <th>Password</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let val of userValue | async">
+        <td>{{ val.id }}</td>
+        <td>{{ val.userName }}</td>
+        <td>{{ val.contact }}</td>
+        <td>{{ val.password }}</td>
+        <td>{{ val.city }}</td>
+        <td>{{ val.country }}</td>
+        <td>{{ val.code }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

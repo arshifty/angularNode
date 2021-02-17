@@ -14,7 +14,8 @@ import { StyleDirective } from './home/style.directive';
 import { AdminModule  } from './admin/admin.module';
 import { LazyComponentComponent } from './lazy-component/lazy-component.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import{ ResolveGuard } from './guards/resolve.guard'
+import{ ResolveGuard } from './guards/resolve.guard';
+import { ViewDataComponent } from './observable/view-data/view-data.component'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import{ ResolveGuard } from './guards/resolve.guard'
     EmployeeGenderPipe,
     StyleDirective,
     LazyComponentComponent,
-    HomepageComponent
+    HomepageComponent,
+    ViewDataComponent
   ],
   imports: [
     BrowserModule,
